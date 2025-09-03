@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Quiz Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Quiz Game 🎯</h1>
+      <p class="rules">
+        Each question = <strong>2 points</strong>. Use options → <strong>1 point</strong>.
+        Type the answer exactly (case-insensitive) for full points, or click "Use Options".
+      </p>
+    </header>
+
+    <main id="main">
+      <section id="start-screen" class="card">
+        <h2>Welcome!</h2>
+        <p>Ready to test your knowledge? We'll ask <span id="numQs">10</span> random questions.</p>
+        <button id="start-btn" class="btn">Start Quiz 🚀</button>
+      </section>
+
+      <section id="question-screen" class="card hidden">
+        <div class="meta">
+          <div>Question <span id="q-num">1</span> / <span id="q-total">10</span></div>
+          <div>Score: <span id="score">0</span></div>
+        </div>
+
+        <h3 id="question-text"></h3>
+
+        <div class="answer-area">
+          <input id="text-answer" type="text" placeholder="Type your answer here (or click Use Options)" />
+          <div class="option-controls">
+            <button id="use-options" class="btn outline">Use Options (lose 1 mark)</button>
+            <button id="submit-text" class="btn">Submit</button>
+          </div>
+        </div>
+
+        <div id="options-box" class="options hidden">
+          <p>Select the correct option:</p>
+          <div id="options-list"></div>
+          <div class="option-controls">
+            <button id="submit-option" class="btn">Submit Option</button>
+            <button id="hide-options" class="btn outline">Cancel</button>
+          </div>
+        </div>
+
+        <div id="feedback" class="feedback hidden"></div>
+
+        <div class="nav">
+          <button id="next-btn" class="btn hidden">Next Question →</button>
+        </div>
+      </section>
+
+      <section id="result-screen" class="card hidden">
+        <h2>🎉 Quiz Over!</h2>
+        <p>Your final score: <strong id="final-score">0</strong> / <span id="final-total">20</span></p>
+        <p>Percentage: <strong id="final-percent">0</strong>%</p>
+
+        <div class="summary">
+          <h3>Summary</h3>
+          <div id="summary-list"></div>
+        </div>
+
+        <button id="play-again" class="btn">Play Again 🔄</button>
+      </section>
+    </main>
+
+    <footer>
+      <small>Pure HTML/CSS/JS quiz — host on GitHub Pages</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
